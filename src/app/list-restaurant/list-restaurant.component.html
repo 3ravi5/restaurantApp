@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rest of collection">
+      <td>{{ rest.id }}</td>
+      <td>{{ rest.name }}</td>
+      <td>{{ rest.address }}</td>
+      <td>{{ rest.email }}</td>
+      <td>
+        <a routerLink="/update/{{rest.id}}">
+          <i
+            class="fa fa-edit"
+            style="font-size: 25px; color: rgb(63, 123, 212)"
+          ></i></a>
+          &nbsp;&nbsp;
+          <i
+          class="fa fa-trash"
+          style="font-size: 25px; color: rgb(204, 77, 19)"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

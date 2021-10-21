@@ -1,0 +1,47 @@
+<div class="jumbotron">
+  <h1>Edit Restaurant</h1>
+</div>
+<div
+  *ngIf="alert"
+  class="alert alert-warning alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success!</strong> Your Form has been submitted succesfully.
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<form class="container" [formGroup]="editRestaurant" (ngSubmit)="updateRest()">
+  <div class="mb-3">
+    <label>Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Name"
+      formControlName="name"
+    />
+  </div>
+  <div class="mb-3">
+    <label>Address</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Address"
+      formControlName="address"
+    />
+  </div>
+  <div class="mb-3">
+    <label>Email</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Enter Email"
+      formControlName="email"
+    />
+  </div>
+  &nbsp; &nbsp;<button type="submit" class="btn btn-warning">Update</button>&nbsp;&nbsp;
+  <a routerLink="/list"><button class="btn btn-info">Go to List</button></a>
+</form>
